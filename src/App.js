@@ -7,11 +7,15 @@ const API_KEY = "d1f5a3acae70dc33db0f071926bd9bc9";
 
 
 class App extends Component {
-  getRecipe= async (e) => {
+  getRecipe = async (e) => {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
-    const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=chicken%20breast&page=2`);
+    const api_call = await fetch
+    (`https://www.food2fork.com/api/search?key=${API_KEY}&q=chicken%20breast&page=10`);
    
+    const data = await api_call.json();
+    console.log(data.recipes[0]); 
+    
   }
   render() {
   return (
