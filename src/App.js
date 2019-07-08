@@ -16,7 +16,7 @@ class App extends Component {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
     const api_call = await fetch
-    (`https://www.food2fork.com/api/search?key=${API_KEY}&q=chicken%20breast&page=10`);
+    (`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&page=10`);
    
     const data = await api_call.json();
     this.setState({ recipes: data.recipes })
@@ -31,7 +31,7 @@ class App extends Component {
      </header>
      <Form getRecipe={this.getRecipe} />
      { this.state.recipes.map((recipe) => {
-       return <p>{ recipe.title }</p>
+       return <p key={recipe.recipe_id}> { recipe.title }</p>
      }) }
     </div>
     );
