@@ -13,9 +13,10 @@ class App extends Component {
      <header className="App-header">
        <h1 className="App-title">Recipe Search</h1>
      </header>
-     <Form />
+     <Form getRecipe={this.getRecipe} />
     </div>
-  );
+    );
+  }
 }
 
 export default App;
