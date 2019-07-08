@@ -4,7 +4,8 @@ import Form from './components/Form';
 
 
 class App extends Component {
-  getRecipe() {
+  getRecipe= (e) => {
+    e.preventDefault();
     console.log("check");
   }
   render() {
