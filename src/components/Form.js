@@ -1,5 +1,10 @@
 import React from 'react';
 
 const Form = () => (
-<form></form>
+<form>
+    <input type="text"/>
+    <button>Search</button>
+</form>
 );
+
+export default Form;
