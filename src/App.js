@@ -3,11 +3,15 @@ import "./app.css";
 import Form from './components/Form';
 
 
+const API_KEY = "d1f5a3acae70dc33db0f071926bd9bc9";
+
+
 class App extends Component {
-  getRecipe= (e) => {
+  getRecipe= async (e) => {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
-    console.log(recipeName);
+    const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=chicken%20breast&page=2`);
+   
   }
   render() {
   return (
