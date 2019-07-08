@@ -7,6 +7,11 @@ const API_KEY = "d1f5a3acae70dc33db0f071926bd9bc9";
 
 
 class App extends Component {
+
+  state = {
+    recipes: []
+
+  }
   getRecipe = async (e) => {
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
@@ -14,7 +19,8 @@ class App extends Component {
     (`https://www.food2fork.com/api/search?key=${API_KEY}&q=chicken%20breast&page=10`);
    
     const data = await api_call.json();
-    console.log(data.recipes[0]); 
+    this.setState({ recipes: data.recipes })
+    console.log(this.state.recipes); 
     
   }
   render() {
@@ -24,6 +30,9 @@ class App extends Component {
        <h1 className="App-title">Recipe Search</h1>
      </header>
      <Form getRecipe={this.getRecipe} />
+     { this.state.recipes.map((recipe) => {
+       return <p>{ recipe.title }</p>
+     }) }
     </div>
     );
   }
