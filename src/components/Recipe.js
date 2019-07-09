@@ -1,7 +1,19 @@
 import React from "react";
 
-const Recipe = () => (
-    <div> Recipe Component </div>
-);
+class Recipe extends React.Component {
+    state = {
+        activeRecipe: []
+    }
 
+    componentDidMount = () => {
+        
+    }
+
+    render() {
+        console.log(this.props);
+        return (
+            <div>recipe</div>
+        );
+    }
+};
 export default Recipe; 
