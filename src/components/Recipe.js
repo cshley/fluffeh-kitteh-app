@@ -14,13 +14,21 @@ class Recipe extends React.Component {
     (`https://www.food2fork.com/api/search?key=${API_KEY}&q=${title}`);
    
     const res = await req.json();
-    console.log(res); 
+    this.setState({ activeRecipe: res.recipes[0] });
+    console.log(this.state.activeRecipe);
     
     }
 
     render() {
+        const recipe = this.state.activeRecipe;
         return (
-            <div>recipe</div>
+            <div className="container">
+                <div className="active-recipe">
+                    <img className="active-recipe__img"
+                    src={recipe.image_url}
+                    alt=""/>
+                </div>
+            </div>
         );
     }
 };
