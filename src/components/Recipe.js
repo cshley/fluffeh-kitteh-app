@@ -11,8 +11,7 @@ class Recipe extends React.Component {
 
     componentDidMount = async () => {
     const title = this.props.location.state.recipe;
-    const req = await fetch
-    (`https://www.food2fork.com/api/search?key=${API_KEY}&q=${title}`);
+    const req = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${title}`);
    
     const res = await req.json();
     this.setState({ activeRecipe: res.recipes[0] });
@@ -26,7 +25,6 @@ class Recipe extends React.Component {
             <div className="container">
 
                 { this.state.activeRecipe.length !== 0 &&
-
                 <div className="active-recipe">
                 <img className="active-recipe__img"
                 src={recipe.image_url}
@@ -36,7 +34,7 @@ class Recipe extends React.Component {
                     Publisher: <span>{ recipe.publisher }</span>
                 </h4>
                 <p className="active-recipe__website">Website:
-                <span><a href={recipe.publisher_url}></a></span>    
+                <span><a href={recipe.publisher_url}>{recipe.publisher_url}</a></span>    
                 </p>
                 <button className="active-recipe__button">
                     <Link to="/">Go Home</Link>
