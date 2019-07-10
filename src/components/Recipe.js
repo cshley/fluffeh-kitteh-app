@@ -2,24 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom"
 
 
+
 const API_KEY = "d1f5a3acae70dc33db0f071926bd9bc9";
 
 class Recipe extends React.Component {
-    state = {
-        activeRecipe: []
+   state = {
+        activeRecipe:[]
     }
 
     componentDidMount = async () => {
     const title = this.props.location.state.recipe;
-    const req = await fetch(`https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${title}`);
+    const req = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${title}`);
    
     const res = await req.json();
-    this.setState({ activeRecipe: res.recipes[0] });
+    this.setState({activeRecipe:res.recipes[0]});
     console.log(this.state.activeRecipe);
+   
     }
     render() {
         const recipe = this.state.activeRecipe;
         return (
+           
             <div className="container">
                 { this.state.activeRecipe.length !== 0 &&
                 <div className="active-recipe">
