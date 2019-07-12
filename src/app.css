@@ -156,3 +156,12 @@ body {
     text-transform: uppercase;
     font-weight: 500;
   }
+
+  .kittehImage {
+    width: 100%;
+    height: auto; 
+    padding-left: auto;
+    padding-right: auto;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
