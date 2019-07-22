@@ -12,14 +12,14 @@
   
   }
 
-    a:link {
-      display:block;
-      text-align:center;
-      text-decoration: none;
-      font-family: 'Eater', cursive;
-      font-size: 80px;
-      color: #b30000;
-    }
+  a:link {
+    display:block;
+    text-align:center;
+    text-decoration: none;
+    font-family: 'Eater', cursive;
+    font-size: 80px;
+    color: #b30000;
+  }
     
     a:visited {
       text-decoration: none;
