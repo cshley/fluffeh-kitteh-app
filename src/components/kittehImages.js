@@ -27,20 +27,23 @@ class KittehImages extends Component {
             .then(data => {
                 let pictures = data.map((cat) => { 
                     /*this will map(sort through and find) over data and retrieve what we want*/
-                    return( /*key is used to set the key to pic result, ensures the dom correponds with the data object*/ 
+                    return( /*key is used to set the key to pic result, 
+                        ensures the dom correponds with the data object. 
+                        Helps react know when to indentify a state change.
+                        Keys always should be given if addings elements into an array*/ 
                         <div key={cat.url}>  
-                            <img src={cat.url} />
+                            <img alt="" src={cat.url} height="60%" width="60%"></img> 
                         </div>
+ 
+            
                     )
                 }) //returns the data formatted in json
-      
-      
       
                 /*lifecycle part three*/
 
                 this.setState({ pictures: pictures }); /* here we are altering state, from the empty array in
                 part one to the pictures recieved from the api in part two*/
-                console.log("state", this.state.pictures)  
+                console.log("state", this.state.pictures )  
             })
             .catch(err => {
                 console.error(err); // if using promise (defining what is gonna happen), always use catch error
@@ -58,10 +61,14 @@ class KittehImages extends Component {
         return(
             <div className="container">
                 <div className="row">
-                    <div className="col-7 mx-auto d-block kittehImage">
-
+                    <div className="col-12 align-self-center mx-auto d-block">
+                    <a href="./" className="text">Fluffeh Kittehs</a>
+                    </div>
+                    <div className="col-12 align-self-center mx-auto d-block kittehImage">
+            
+                     {this.state.pictures}
+                     
            
-            {this.state.pictures}
             </div>
             </div>
             </div>
