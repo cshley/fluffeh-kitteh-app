@@ -12,13 +12,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && rm -r docs/ && mv build docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+"homepage" : "http://cshley.github.io/fluffeh-kitteh-app",
+"eslintConfig": {
+  "extends": "react-app"
+},
+
   "browserslist": {
     "production": [
       ">0.2%",
